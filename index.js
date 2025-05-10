@@ -14,6 +14,8 @@ const pool = new Pool({
   password: process.env.DB_PASS,
 });
 
+//Comentario
+
 function luhnCheck(number) {
   const digits = number.split('').reverse().map(Number);
   const total = digits.reduce((sum, digit, i) => {
