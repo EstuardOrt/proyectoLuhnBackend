@@ -9,7 +9,7 @@ services:
     ports:
       - "5001:5000"
     env_file:
-      - ./env/.env.pre
+      - ../env/.env.pre
     networks:
       - luhn-net
     depends_on:
