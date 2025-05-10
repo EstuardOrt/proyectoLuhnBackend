@@ -17,12 +17,13 @@ pipeline {
     stage('Clonar develop para pruebas') {
       steps {
         deleteDir()
-        git branch: 'develop', url: 'https://github.com/usuario/repositorio.git'
+        git branch: 'develop', url: 'https://github.com/EstuardOrt/proyectoLuhnBackend'
       }
     }
 
     stage('Prueba backend') {
       steps {
+        sh 'docker-compose -f docker-compose.pre.yml up -d --build backend'
         sh '''
           response=$(curl -s -X POST http://localhost:5001/validate \
             -H "Content-Type: application/json" \
