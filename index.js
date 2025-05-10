@@ -14,7 +14,7 @@ const pool = new Pool({
   password: process.env.DB_PASS,
 });
 
-//Comentario
+//Comentario 2
 
 function luhnCheck(number) {
   const digits = number.split('').reverse().map(Number);
