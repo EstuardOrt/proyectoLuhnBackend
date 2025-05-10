@@ -24,7 +24,7 @@ function luhnCheck(number) {
   }, 0);
   return total % 10 === 0;
 }
-
+//Comentario
 app.post('/validate', async (req, res) => {
   const { number } = req.body;
   if (!number || !/^[0-9]+$/.test(number)) {
