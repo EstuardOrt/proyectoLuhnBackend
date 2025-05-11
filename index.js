@@ -12,7 +12,7 @@ const pool = new Pool({
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
 });
-//comentario 3
+//comentario 345
 function luhnCheck(number) {
   const digits = number.split('').reverse().map(Number);
   const total = digits.reduce((sum, digit, i) => {
