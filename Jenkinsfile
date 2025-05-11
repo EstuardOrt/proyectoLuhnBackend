@@ -4,24 +4,23 @@ pipeline {
       image 'node:18'
     }
   }
+
   environment {
     NODE_ENV = 'test'
   }
 
   stages {
-    stage('Clonar develop para pruebas') {
+    stage('Preparar entorno') {
       steps {
         deleteDir()
         git branch: 'develop', url: 'https://github.com/EstuardOrt/proyectoLuhnBackend'
       }
     }
 
-    stage('Pruebas unitarias') {
+    stage('Instalar dependencias y ejecutar pruebas') {
       steps {
-        dir('backend') {
-          sh 'npm ci'      
-          sh 'npm test'    
-        }
+        sh 'npm ci'
+        sh 'npm test'
       }
     }
 
