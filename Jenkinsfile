@@ -1,13 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:18'
-    }
-  }
-
-  environment {
-    COMPOSE_INTERACTIVE_NO_CLI = 1
-  }
+  agent any
 
   stages {
     stage('Desplegar a producción') {
