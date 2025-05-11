@@ -31,7 +31,7 @@ services:
 
   adminer:
     image: adminer
-    container_name: adminer-pre
+    container_name: adminer-prod
     restart: always
     ports:
       - "8083:8080"
