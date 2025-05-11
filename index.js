@@ -1,4 +1,3 @@
-// app.js
 const express = require('express');
 const { Pool } = require('pg');
 require('dotenv').config();
@@ -13,8 +12,6 @@ const pool = new Pool({
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
 });
-
-//Comentario 2
 
 function luhnCheck(number) {
   const digits = number.split('').reverse().map(Number);
@@ -45,5 +42,12 @@ app.post('/validate', async (req, res) => {
 
   res.json({ valid });
 });
+
+// Solo inicia el servidor si el archivo se ejecuta directamente (no cuando se importa en tests)
+if (require.main === module) {
+  app.listen(5000, () => {
+    console.log('Backend running on port 5000');
+  });
+}
 
 module.exports = { app, luhnCheck };
