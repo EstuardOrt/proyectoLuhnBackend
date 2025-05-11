@@ -43,6 +43,12 @@ app.post('/validate', async (req, res) => {
   res.json({ valid });
 });
 
-app.listen(5000, () => {
-  console.log('Backend running on port 5000');
-});
+// Solo inicia el servidor si el archivo se ejecuta directamente (no cuando se importa en tests)
+if (require.main === module) {
+  app.listen(5000, () => {
+    console.log('Backend running on port 5000');
+  });
+}
+
+module.exports = { app, luhnCheck };
+//comentario nuevo
