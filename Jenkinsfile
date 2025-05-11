@@ -10,13 +10,6 @@ pipeline {
   }
 
   stages {
-    stage('Preparar entorno') {
-      steps {
-        deleteDir()
-        git branch: 'develop', url: 'https://github.com/EstuardOrt/proyectoLuhnBackend'
-      }
-    }
-
     stage('Instalar dependencias y ejecutar pruebas') {
       steps {
         sh 'npm ci'
