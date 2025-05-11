@@ -29,6 +29,15 @@ services:
     networks:
       - luhn-net-prod
 
+  adminer:
+    image: adminer
+    container_name: adminer-pre
+    restart: always
+    ports:
+      - "8083:8080"
+    networks:
+      - luhn-net-prod
+
 volumes:
   dbdata-prod:
 
