@@ -40,6 +40,7 @@ pipeline {
             git merge --no-ff origin/develop -m "Merge automático tras pruebas exitosas" -X ours
             git push origin main
           '''
+        }
       }
     }
   }
